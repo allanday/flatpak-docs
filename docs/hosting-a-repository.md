@@ -6,7 +6,7 @@
 
   OSTree supports something called static deltas. These are single files in the repo that contains all the data needed to go between two revisions (or from nothing to a revision). Creating such deltas will take up more space on the server, but will make downloads much faster. This can be done with the build-update-repo --generate-static-deltas.
 
-  ### GPG signatures
+## GPG signatures
 
   By default OSTree refuses to pull from a remote repository that is not signed. To disable GPG verification, the `--no-gpg-verify` option needs to be used when a remote is added. Alternatively, it can be disabled on an existing remote using flatpak remote-modify.
   Note that gpg signatures are required for the user to be able to install trusted remotes that can be updated from without needing to be root.
