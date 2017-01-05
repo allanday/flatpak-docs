@@ -1,10 +1,10 @@
-# Flatpak Developer Documentation
+# Flatpak
 
-Flatpak's developer documentation covers everything you need to know to build and distribute applications. It includes an introduction to the basic concepts and a simple app building tutorial, before moving on to cover automated building and repository hosting.
+Welcome to Flatpak's developer documentation! This covers everything you need to know to build and distribute applications as Flatpaks. The docs start with introduction to the basic concepts and a simple app building tutorial, before moving on to cover automated building and repository hosting.
 
 Example tutorials are used throughout. To complete them, it is necessary to have flatpak and flatpak-builder installed on your system. [flatpak.org](http://flatpak.org/getting.html) has details on how to do this.
 
-## Introduction to Flatpak
+## Key Concepts
 
 Flatpak is best understood through its key concepts: runtimes, bundled libraries, SDKs and sandboxes. These help to explain how Flatpak differs from traditional application distribution on Linux, as well as the framework's capabilities.
 
