@@ -1,6 +1,6 @@
 site_name: Flatpak Developer Documentation
 pages:
-- Introduction: index.md
+- Getting Started: index.md
 - Building Simple Apps: building-simple-apps.md
 - Flatpak Builder: flatpak-builder.md
 - Hosting a Repository: hosting-a-repository.md
