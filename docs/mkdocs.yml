@@ -1,6 +1,5 @@
 site_name: Flatpak Developer Docs
 pages:
-
 - Home: index.md
 - Getting Started: getting-started.md
 - Flatpak Builder: flatpak-builder.md
