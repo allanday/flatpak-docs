@@ -62,9 +62,9 @@
 
   You can try flatpak-builder for yourself, using the repository that was created in the previous section. To do this, place the manifest json from above into a file called `org.gnome.Dictionary.json` and run the following command:
 
-  <pre>
-  <span class="unselectable">$ </span>flatpak-builder --repo=repo dictionary2 org.gnome.Dictionary.json
-  </pre>
+  
+  $ flatpak-builder --repo=repo dictionary2 org.gnome.Dictionary.json
+  
   
   This will:
 
@@ -78,22 +78,22 @@
 
   It is now possible to update the installed version of the Dictionary application with the new version that was built and exported by flatpak-builder:
 
-  <pre>
-  <span class="unselectable">$ </span>flatpak --user update org.gnome.Dictionary
-  </pre>
+  
+  $ flatpak --user update org.gnome.Dictionary
+  
 
   To check that the application has been successfully updated, you can compare the sha256 commit of the installed app with the commit ID that was printed by flatpak-builder:
 
-  <pre>
-  <span class="unselectable">$ </span>flatpak info org.gnome.Dictionary
-  <span class="unselectable">$ </span>flatpak info org.gnome.Dictionary.Locale
-  </pre>
+  
+  $ flatpak info org.gnome.Dictionary
+  $ flatpak info org.gnome.Dictionary.Locale
+  
   
   And finally, you can run the new version of the Dictionary app:
 
-  <pre>
-  <span class="unselectable">$ </span>flatpak run org.gnome.Dictionary
-  </pre>
+  
+  $ flatpak run org.gnome.Dictionary
+  
   
 ## Example manifests
 
@@ -114,9 +114,9 @@
 
   Most applications will need access to some of these resources in order to be useful, and flatpak provides a number of ways to give an application access to them. The build-finish command is the simplest of these. As was seen in a previous example, this can be used to add access to graphics sockets and network resources:
 
-  <pre>
-  <span class="unselectable">$ </span>flatpak build-finish dictionary2 --socket=x11 --share=network --command=gnome-dictionary
-  </pre>
+  
+  $ flatpak build-finish dictionary2 --socket=x11 --share=network --command=gnome-dictionary
+  
 
   These arguments translate into several properties in the application metadata file:
 
@@ -132,24 +132,24 @@
 
   Note that in this example access to the filesystem wasn't granted. This can be tested by installing the resulting application and running:
 
-  <pre>
-  <span class="unselectable">$ </span>flatpak run --command=ls org.gnome.Dictionary ~/
-  </pre>
+  
+  $ flatpak run --command=ls org.gnome.Dictionary ~/
+  
   
   build-finish allows a whole range of resources to be added to an application. Run `flatpak build-finish --help` to view the full list.
 
   There are several ways to override the permissions that are set in an application's metadata file. One of these is to override them using flatpak run, which accepts the same parameters as build-finish. For example, this will let the Dictionary application see your home directory:
 
-  <pre>
-  <span class="unselectable">$ </span>flatpak run --filesystem=home --command=ls org.gnome.Dictionary ~/
-  </pre>
+  
+  $ flatpak run --filesystem=home --command=ls org.gnome.Dictionary ~/
+  
   
   flatpak run can also be used to permanently override an application's permissions:
 
-  <pre>
-  <span class="unselectable">$ </span>flatpak --user override --filesystem=home org.gnome.Dictionary
-  <span class="unselectable">$ </span>flatpak run --command=ls org.gnome.Dictionary ~/
-  </pre>
+  
+  $ flatpak --user override --filesystem=home org.gnome.Dictionary
+  $ flatpak run --command=ls org.gnome.Dictionary ~/
+  
   
   It is also possible to remove permissions using the same method. You can use the following command to see what happens when access to the filesystem is removed, for example:
 
@@ -204,25 +204,25 @@
 
       --socket=system-bus --socket=session-bus
 
-  ## Distributing Applications
+## Distributing Applications
 
   As has already been seen, flatpak installs runtimes and apps from repositories. To do this, it uses [OSTree](https://ostree.readthedocs.io/en/latest/). This is similar to Git, but has been designed to handle trees of large binaries. Like Git, it has the concept of repositories and commits. Applications are stored as branches.
 
   To distribute an application, it must be exported to a repository. This is done using the build-export command:
 
-  <pre>
-  <span class="unselectable">$ </span>flatpak build-export [OPTION…] LOCATION DIRECTORY [BRANCH]
-  </pre>
+  
+  $ flatpak build-export [OPTION…] LOCATION DIRECTORY [BRANCH]
+  
   
   The resulting repository is in an archive-z2 format. To allow users to use a repository, all you have to do is copy it to a web server and give them the URL.
 
-  ### Managing repositories
+## Managing repositories
 
   The flatpak build-update-repo command provides most of the tools for managing repositories. For example, to set a user readable name for a repository:
 
-  <pre>
-  <span class="unselectable">$ </span>flatpak build-update-repo --title="Nice name" repo
-  </pre>
+  
+  $ flatpak build-update-repo --title="Nice name" repo
+  
   
   build-update also lets you prune (`--prune`) unused objects and deltas from the repository, and even remove older revisions (using `--prune-depth`) which is useful for things like automatic nightly build repositories.
 
@@ -230,7 +230,7 @@
 
   As already described, flatpak uses the AppData standard to store user visible information about applications. This information needs to be accessible to clients in order to be displayed in app stores. To do this, build-update-repo scans all the branches in the repository for AppData data, which is collected and committed into a repository-wide AppStream branch. flatpak then keeps a local copy of this branch for each remote, which can be manually updated using the update command. For example:
 
-  <pre>
-  <span class="unselectable">$ </span>flatpak update --appstream gnome
-  </pre>
+  
+  $ flatpak update --appstream gnome
+  
  
