@@ -1,5 +1,5 @@
 site_name: Flatpak
-docs_dir: flatpak/docs
+docs_dir: flatpak-docs/docs
 pages:
 - Home: index.md
 - Getting Started: getting-started.md
