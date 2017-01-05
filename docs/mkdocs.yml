@@ -2,7 +2,7 @@ site_name: Flatpak Developer Docs
 docs_dir: flatpak-docs/docs
 pages:
 
-- Home: "index.md"
-- Getting Started: "getting-started.md"
-- Flatpak Builder: "flatpak-builder.md"
-- Hosting a Repository: "hosting-a-repository.md"
+- Home: index.md
+- Getting Started: getting-started.md
+- Flatpak Builder: flatpak-builder.md
+- Hosting a Repository: hosting-a-repository.md
