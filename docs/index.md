@@ -6,8 +6,6 @@ Example tutorials are used throughout. To complete them, it is necessary to have
 
 ## Introduction to Flatpak
 
-### Key Concepts
-
 Flatpak is best understood through its key concepts: runtimes, bundled libraries, SDKs and sandboxes. These help to explain how Flatpak differs from traditional application distribution on Linux, as well as the framework's capabilities.
 
 ### Runtimes<a id="runtimes"></a>
