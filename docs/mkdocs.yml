@@ -1,5 +1,4 @@
 site_name: Flatpak Developer Docs
-docs_dir: flatpak-docs/docs
 pages:
 
 - Home: index.md
