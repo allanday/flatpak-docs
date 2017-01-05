@@ -1,8 +1,6 @@
 # Getting Started with Flatpak
 
-This guide contains everything you need to know to build and distribute applications using Flatpak. It includes an introduction to the basic concepts and a simple app building tutorial, before moving on to cover automated building and repository hosting.
-
-Example tutorials are used throughout this guide. To complete them, it is necessary to have flatpak and flatpak-builder installed on your system. See [getting Flatpak](getting.html) for more details on this.
+An introduction to Flatpak for application developers.
 
 ## Key Concepts
 
